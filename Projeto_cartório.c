@@ -112,55 +112,68 @@ int main ()
 	{
 	int opcao=0; // definindo as variaveis
 	int laco=1;
+	char senhadigitada[10]="a";
+	int comparacao; 
 	
-	for(laco=1;laco=1;)
+	printf("### Cartorio da EBAC ### \n\n");
+	printf("Login de administrador \n\nDigite a sua senha: ");
+	scanf("%s",senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
-		
-		system("cls"); //deleta todas as mensagens que tinha antes
-
 	
-		setlocale(LC_ALL, "Portuguese"); //para colocar acentos do Brasil, definindo a linguagem
+		system ("cls");
 	
-		printf("### Cartorio da EBAC ### \n\n"); //inicio do menu
-		printf("Escolha a opção desejada do menu: \n\n"); //escrevendo para o cliente
-		printf("\t 1 - Registrar nomes\n"); //escrevendo para o cliente
-		printf("\t 2 - Consultar os nomes\n"); //escrevendo para o cliente
-		printf("\t 3 - Deletar nomes\n"); //escrevendo para o cliente
-		printf("\t 4 - Sair do sistema \n\n");
-		printf("Opção: "); //fim do menu
-	
-		scanf("%d", &opcao); //armazenando a escolha do usuario
-	
-		system("cls"); //deleta todas as mensagens que tinha antes
-		
-		switch(opcao) //para o programa ficar mais limpo e leve e inicio da seleção do menu
+		for(laco=1;laco=1;)
 		{
-			case 1:
-			registro(); //chamada de funções
-			break;
-			
-			case 2:
-			consultar();
-			break;
-			
-			case 3:
-			deletar();
-			break;
-			
-			case 4:
-			printf("Obrigada por utilizar o sistema!\n");
-			return 0;
-			break;
-			
-			default: //diferente das opções que tem
-			printf("Essa opção não esta disponivel.\n");
-			system("pause");
-			break;
-		}
+		
+			system("cls"); //deleta todas as mensagens que tinha antes
 	
 		
-	
+			setlocale(LC_ALL, "Portuguese"); //para colocar acentos do Brasil, definindo a linguagem
+		
+			printf("### Cartorio da EBAC ### \n\n"); //inicio do menu
+			printf("Escolha a opção desejada do menu: \n\n"); //escrevendo para o cliente
+			printf("\t 1 - Registrar nomes\n"); //escrevendo para o cliente
+			printf("\t 2 - Consultar os nomes\n"); //escrevendo para o cliente
+			printf("\t 3 - Deletar nomes\n"); //escrevendo para o cliente
+			printf("\t 4 - Sair do sistema \n\n");
+			printf("Opção: "); //fim do menu
+		
+			scanf("%d", &opcao); //armazenando a escolha do usuario
+		
+			system("cls"); //deleta todas as mensagens que tinha antes
+				
+			switch(opcao) //para o programa ficar mais limpo e leve e inicio da seleção do menu
+				{
+				case 1:
+				registro(); //chamada de funções
+				break;
+					
+				case 2:
+				consultar();
+				break;
+					
+				case 3:
+				deletar();
+				break;
+					
+				case 4:
+				printf("Obrigada por utilizar o sistema!\n");
+				return 0;
+				break;
+					
+				default: //diferente das opções que tem
+				printf("Essa opção não esta disponivel.\n");
+				system("pause");
+				break;
+			}
+		}
 	}
 	
+	else
+		printf("Senha incorreta!");
 }
 
